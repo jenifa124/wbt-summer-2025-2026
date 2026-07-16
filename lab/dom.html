@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var zip = document.getElementById("zip").value;
+            var comments = document.getElementById("comments").value;
+
+            if (fname === "" || lname === "" || email === "" || phone === "" || address === "" || zip === "" || comments === "") {
+                alert("All fields must be filled out");
+                event.preventDefault();
+            }
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        First Name: <input type="text" id="fname" name="fname"><br><br>
+        Last Name: <input type="text" id="lname" name="lname"><br><br>
+        Email: <input type="text" id="email" name="email"><br><br>
+        Phone: <input type="text" id="phone" name="phone"><br><br>
+        Address: <input type="text" id="address" name="address"><br><br>
+        Zip Code: <input type="number" id="zip" name="zip"><br><br>
+        Comments: <textarea id="comments" name="comments"></textarea><br>
+
+
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+
+
+</html>
